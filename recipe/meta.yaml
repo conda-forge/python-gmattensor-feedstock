@@ -1,6 +1,6 @@
 {% set name = "python-gmattensor" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "a7c343df5b816762cadddd0c52fb8943a50a87c4f100e3704335900bbd01aca0" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "1cb800491cf67300f532464063de20cc102afb72a00471b0296aafdd804da984" %}
 
 package:
   name: {{ name|lower }}
