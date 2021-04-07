@@ -1,17 +1,18 @@
-{% set name = "python-gmattensor" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "417bd7af1bb334db418e3712d53e4ea7f042a083ded3ca34c45ca440886efffd" %}
+{% set org = "tdegeus" %}
+{% set name = "GMatTensor" %}
+{% set version = "0.7.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: python-{{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/tdegeus/GMatTensor/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: "7066f8c07466579ae9333eed9d889bcfceef9dd7ab016a2bd45fe6d4e056156b"
 
 build:
   number: 0
+  script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,23 +22,28 @@ requirements:
     - python
     - setuptools
     - pip
+    - setuptools_scm
     - pyxtensor
   run:
     - python
 
 test:
   imports:
-    - GMatTensor
+    - {{ name }}
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/tdegeus/GMatTensor
+  home: https://github.com/{{ org }}/{{ name }}
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Tensor definitions supporting several GMat models.
   description: Tensor definitions supporting several GMat models.
-  doc_url: https://github.com/tdegeus/GMatTensor
-  dev_url: https://github.com/tdegeus/GMatTensor
+  doc_url: https://{{ org }}.github.io/{{ name }}
+  dev_url: https://github.com/{{ org }}/{{ name }}
 
 extra:
   recipe-maintainers:
