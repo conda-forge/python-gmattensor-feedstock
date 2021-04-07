@@ -11,7 +11,7 @@ Summary: Tensor definitions supporting several GMat models.
 
 Development: https://github.com/tdegeus/GMatTensor
 
-Documentation: https://github.com/tdegeus/GMatTensor
+Documentation: https://tdegeus.github.io/GMatTensor
 
 Tensor definitions supporting several GMat models.
 
